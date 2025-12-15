@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVUS GLOBAL ADVISORS - Forging Future Enterprises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* CSS for the Ultra-Hitech Look */
+        :root {
+            --dark-background: #0d1117;
+            --primary-color: #007bff; /* Bright blue for a clean, tech look */
+            --accent-color: #00ffff; /* Cyan for 'glowing' hitech elements */
+            --text-color-light: #f0f6fc;
+            --text-color-faded: #8b949e;
+            --card-background: #161b22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-background);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            /* Hitech Circuitry Background Pattern */
+            background-image: radial-gradient(circle at 1px 1px, var(--card-background) 1px, transparent 0),
+                              linear-gradient(rgba(0, 123, 255, 0.05), rgba(0, 123, 255, 0.05));
+            background-size: 50px 50px, 100% 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: rgba(22, 27, 34, 0.95);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .logo p {
+            font-size: 0.8rem;
+            color: var(--text-color-faded);
+            margin-top: -5px;
+            font-weight: 300;
+        }
+
+        .nav-links a {
+            color: var(--text-color-light);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* --- Hero/Main Content --- */
+        .hero {
+            padding: 80px 0 50px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .profile-card {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.15);
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 100px; /* Controlled size as requested */
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .profile-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            color: var(--text-color-faded);
+        }
+
+        .service-container {
+            display: grid;
+            gap: 30px;
+        }
+
+        .service-section {
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .service-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .service-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .icon-graphic {
+            font-size: 3rem;
+            color: var(--accent-color);
+            filter: drop-shadow(0 0 5px var(--accent-color));
+            margin-right: 20px;
+            min-width: 60px;
+        }
+
+        .service-text p {
+            color: var(--text-color-faded);
+        }
+
+        .service-text ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .service-text ul li {
+            color: var(--text-color-light);
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .service-text ul li::before {
+            content: "\f058"; /* Font Awesome check circle */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.8rem;
+        }
+
+
+        /* --- Experience Highlights Section --- */
+        .highlights {
+            background-color: #080c10; /* Slightly darker band */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .highlights h2 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .highlight-list {
+            display: flex;
+            justify-content: space-around;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            width: 30%;
+            min-width: 200px;
+            padding: 20px;
+            margin: 10px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(0, 255, 255, 0.05));
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-color);
+            text-align: left;
+        }
+
+        .highlight-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .highlight-item p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color-light);
+        }
+
+        /* --- Contact/Lead Form Section --- */
+        .contact-section {
+            padding: 60px 0 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .contact-text {
+            max-width: 500px;
+        }
+
+        .contact-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-text p {
+            color: var(--text-color-faded);
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background-color: var(--card-background);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+            width: 400px;
+        }
+
+        .contact-form h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #0d1117;
+            border: 1px solid rgba(0, 123, 255, 0.5);
+            color: var(--text-color-light);
+            border-radius: 4px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-color);
+            color: var(--dark-background);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background: #4dffff;
+            transform: translateY(-2px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: rgba(22, 27, 34, 0.95);
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 123, 255, 0.2);
+        }
+
+        .social-links a {
+            color: var(--text-color-faded);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            filter: drop-shadow(0 0 5px var(--accent-color));
+        }
+
+        footer p {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-color-faded);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <h1><i class="fas fa-layer-group"></i> NOVUS GLOBAL ADVISORS</h1>
+                <p>Forging Future Enterprises</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#solutions" class="active">Solutions</a>
+                <a href="#profile">Profile</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="profile">
+            <aside class="profile-card">
+                <img src="C:\Users\Dhananjay Goyal\Documents\MIT\1517040231774.jpg" alt="Dhananjay Goyal Profile Picture">
+                <h2>Dhananjay Goyal</h2>
+                <p>Global Business Services & GCC Specialist</p>
+                <p>25+ Years Industry Experience | CA, IFRS, AI-Driven Leadership, Lean Six Sigma</p>
+            </aside>
+            
+            <div class="service-container" id="solutions">
+                
+                <div class="service-section">
+                    <h3>GCC Setup & Scaling</h3>
+                    <div class="service-content">
+                        <i class="icon-graphic fas fa-chart-line"></i>
+                        <div class="service-text">
+                            <p>Specializing in developing GBS operations into strategic growth engines. We build, scale, and mature Global Capability Centers (GCCs) from concept to execution, driving operational governance and value creation.</p>
+                            <ul>
+                                <li>Strategy and Location Assessment</li>
+                                <li>Robust Operational and Commercial Governance</li>
+                                <li>Seamless GBS Setup and Transition Leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <h3>Enterprise Transformation & Digitalization</h3>
+                    <div class="service-content">
+                        <i class="icon-graphic fas fa-cogs"></i>
+                        <div class="service-text">
+                            <p>Leveraging deep expertise in Finance and Shared Services to implement end-to-end operational excellence. We deliver tangible savings and improve financial performance through process re-engineering and in-house transition management.</p>
+                            <ul>
+                                <li>Delivering >$5M+ in Productivity and Run-rate Savings</li>
+                                <li>15+ Tech Transitions Led (SAP HANA, Oracle, PeopleSoft)</li>
+                                <li>End-to-End F&A, HR, and Supply Chain Digitalization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <h3>AI-Driven Leadership & Digitalization</h3>
+                    <div class="service-content">
+                        <i class="icon-graphic fas fa-brain"></i>
+                        <div class="service-text">
+                            <p>Future-proofing your enterprise by integrating cutting-edge AI and data-driven insights into leadership and operational models. Unlock value through robust performance management and risk modernization.</p>
+                            <ul>
+                                <li>Building High-Performance, Data-Driven Teams</li>
+                                <li>CXO-Level Transformation Initiatives</li>
+                                <li>Unlocking Value with AI and Advanced Analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <div class="container">
+                <h2>Experience & Profile Highlights</h2>
+                <div class="highlight-list">
+                    <div class="highlight-item">
+                        <i class="fas fa-globe"></i>
+                        <p>25+ Years Global Leadership in Finance & GBS</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-handshake"></i>
+                        <p>15+ Large-Scale Technology & Process Transitions Led</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <p>Optimized P&L and Delivered >$5M+ in Savings</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-weight: 600; font-size: 1.5rem; color: var(--text-color-light);">Unlock Your Business's Full Potential</p>
+            </div>
+        </section>
+        
+        <section class="contact-section" id="contact">
+            <div class="contact-text">
+                <h2>Ready to Transform Your Enterprise?</h2>
+                <p>Let's discuss how NOVUS GLOBAL ADVISORS can help you build and scale a world-class Global Capability Center (GCC) or drive your next major digital transformation initiative.</p>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--accent-color);">Submit your inquiry now for a confidential consultation.</p>
+            </div>
+            
+            <form class="contact-form" action="#" method="POST">
+                <h4>Connect with Dhananjay Goyal</h4>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" placeholder="Your Company" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Work Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="4" placeholder="Your Message / Area of Interest (e.g., GCC Strategy, AI Leadership)" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" title="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" title="Follow on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" title="Email Us"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 NOVUS GLOBAL ADVISORS. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
